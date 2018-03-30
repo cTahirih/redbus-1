@@ -18,22 +18,20 @@
     </header>
 
     <main>
-      <nav>
+      <nav class="container">
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+            <a class="nav-link active" href="#internet" role="tab" data-toggle="tab">Banca por Internet</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link" href="#cash" role="tab" data-toggle="tab">Pago Efectivo</a>
           </li>
         </ul>
       </nav>
+      <div class="tab-content container">
+        <div role="tabpanel" class="tab-pane fade show active" id="internet">Banca por internet</div>
+        <div role="tabpanel" class="tab-pane fade" id="cash">Pago efectivo</div>
+      </div>
     </main>
     <footer>
 

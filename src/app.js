@@ -1,11 +1,4 @@
-/* VERSIÓN 1 */
-$(document).ready(function() {
+window.addEventListener('load', () => {
+
 
 });
-
-
-/* VERSIÓN 2 */
-function begin() {
-
-}
-$(document).ready(begin);

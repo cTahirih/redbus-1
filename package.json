@@ -1,0 +1,27 @@
+{
+  "name": "redbus",
+  "version": "1.0.0",
+  "description": "E-pay and cash payment gateway for the start-up Redbus.",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel --presets env src -d public/js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LizbethFP/redbus.git"
+  },
+  "keywords": [
+    "gateway",
+    "redbus"
+  ],
+  "author": "Shannon Rivera, Tahirih Jaliri, Lizbeth Félix.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LizbethFP/redbus/issues"
+  },
+  "homepage": "https://github.com/LizbethFP/redbus#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}

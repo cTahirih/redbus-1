@@ -1,6 +1,20 @@
 /* Clases reutilizables */
 
 /* Clases específicas */
+
 .icon-header {
   width: 10rem;
+}
+
+.lSPrev {
+  background-image: url(../assets/images/prev.svg) !important;
+  background-repeat: no-repeat;
+}
+
+.lSNext {
+  background-image: url(../assets/images/next.svg) !important;
+}
+
+ul.lSPager.lSpg {
+  display: none !important;
 }

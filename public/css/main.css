@@ -1,9 +1,81 @@
 /* Clases reutilizables */
+:root {
+  --color1: #e0aa00; /*color distintivo de marca*/
+  --color2: #ffd87f; /*kaki*/
+  --color3: #f6f4f4;  /*withesmoke*/
+  --color4: #5a5854; /*dimgray*/
+  --color5: #211916; /*black*/
+  --color6: #b9373e; /*brown*/
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.color-gray {
+  color: var(--color5);
+}
+
+.button-payment {
+  background-color: var(--color6);
+  border-radius: 13px;
+}
 
 /* Clases específicas */
 
 .icon-header {
   width: 10rem;
+}
+
+.img-clock, 
+.icon-arrow {
+  width: 1.75rem;
+}
+
+.font-size-tab {
+  font-size: 0.8rem;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid var(--color2);
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  color: var(--color1);
+  background-color: #fff;
+  border-color: var(--color2) var(--color2) #fff;
+}
+
+.nav-tabs .nav-link {
+  color: var(--color4);
+}
+
+.payment-code {
+  background-color: var(--color1);
+  color: #fff;
+  height: 20vh;
+}
+
+.payment-price {
+  background-color: var(--color3);
+  height: 20vh;
+}
+
+.payment-expire {
+  background-color: var(--color2);
+  height: 20vh;  
+}
+
+.font-size-payment {
+  font-size: 0.7em;
+}
+
+p#price {
+  font-size: 0.75em;
+}
+
+span#date {
+  font-size: 1.2em;
 }
 
 .lSPrev {
@@ -17,4 +89,21 @@
 
 ul.lSPager.lSpg {
   display: none !important;
+}
+
+@media (min-width: 768px) {
+  .font-size-payment {
+    font-size: 0.9em;
+  }
+
+  p#code,
+  p#price {
+    font-size: 1.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  .font-size-tab {
+    font-size: 1.3rem;
+  }
 }

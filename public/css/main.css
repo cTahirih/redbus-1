@@ -89,6 +89,7 @@ ul#responsive li img {
 
 .lSNext {
   background-image: url(../assets/images/next.svg) !important;
+  background-repeat: no-repeat!important;
 }
 
 ul.lSPager.lSpg {

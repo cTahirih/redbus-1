@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
   const pictureSlider = data => {
     data.internetBanks.forEach(element => {
       let sliderContent = `<li>
-                            <img src="${element.url}" alt=${element.id}>
+                            <img src="${element.url}" alt="${element.id}">
                           </li>`;
     });
     $('#responsive').append(sliderContent);

@@ -86,6 +86,11 @@ ul#responsive li img {
   border: 1px solid var(--color1)
 }
 
+.icon-payment-slider {
+  width: 6em;
+  border: 1px solid var(--color2);
+}
+
 .lSPrev {
   background-image: url(../assets/images/prev.svg) !important;
   background-repeat: no-repeat;

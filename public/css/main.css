@@ -12,6 +12,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.color-golden {
+  color: var(--color1);
+}
+
 .color-gray {
   color: var(--color5);
 }
@@ -77,6 +81,23 @@ span#date {
   font-size: 1.2em;
 }
 
+/*footer*/
+
+.footer-icon-print {
+  width: 4em;
+  height: 3em;
+  border: 1px solid var(--color1);
+  border-radius: 10px;
+}
+
+.payment-icon-footer {
+  width: 7em;
+}
+
+.fs-footer {
+  font-size: 0.86em;
+}
+
 @media (min-width: 768px) {
   .font-size-payment {
     font-size: 0.9em;
@@ -88,7 +109,7 @@ span#date {
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   .font-size-tab {
     font-size: 1.3rem;
   }

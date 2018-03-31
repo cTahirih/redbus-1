@@ -26,6 +26,7 @@ body {
 }
 
 /* Clases específicas */
+
 .icon-header {
   width: 10rem;
 }
@@ -98,6 +99,19 @@ span#date {
   font-size: 0.86em;
 }
 
+.lSPrev {
+  background-image: url(../assets/images/prev.svg) !important;
+  background-repeat: no-repeat;
+}
+
+.lSNext {
+  background-image: url(../assets/images/next.svg) !important;
+}
+
+ul.lSPager.lSpg {
+  display: none !important;
+}
+
 @media (min-width: 768px) {
   .font-size-payment {
     font-size: 0.9em;
@@ -114,10 +128,3 @@ span#date {
     font-size: 1.3rem;
   }
 }
-
-
-
-
-
-
-

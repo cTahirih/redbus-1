@@ -4,7 +4,7 @@
   "description": "E-pay and cash payment gateway for the start-up Redbus.",
   "main": "index.js",
   "scripts": {
-    "build": "babel --presets env src -d public/js"
+    "build": "babel src -d public/js"
   },
   "repository": {
     "type": "git",

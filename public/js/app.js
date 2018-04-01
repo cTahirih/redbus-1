@@ -36,16 +36,16 @@ window.addEventListener('load', function () {
   };
 
   data.internetBanks.map(function (element) {
-    var itemSlider = '<li class="nav-item px-2 icon-bank" data-detail="' + element.detail + '">\n                            <img src="' + element.url + '" alt=' + element.id + ' class="icon-payment-slider my-2">\n                        </li>';
+    var itemSlider = '<li class="nav-item px-2 icon-bank" data-detail="' + element.detail + '">\n                            <img src="' + element.url + '" alt=' + element.id + ' class="icon-payment-slider img-payment-internet my-2">\n                        </li>';
     $('#payment-internet').append(itemSlider);
   });
 
   $('.icon-bank').click(function () {
-    // console.log($(this).data('detail'));
-    var details = $(this).data('detail');
-    console.log(details);
-    $('#instruction').html('');
-    $('#instruction').append(details);
+    $(this).find('img').removeClass('active-bank').addClass('active-bank');
+    $(this).siblings().find('img').removeClass('active-bank');
+    $('#instructions-tab1').html('');
+    var detailIntBank = '<p>\n            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">' + $(this).data('detail') + '\n          </p>\n          <p>\n            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu c\xF3digo CIP: 9125682 y sigue los pasos.</p>';
+    $('#instructions-tab1').append(detailIntBank);
   });
 
   data.cashBanks.map(function (element) {
@@ -54,7 +54,7 @@ window.addEventListener('load', function () {
   });
 
   $('#responsive').on('click', 'li', function () {
-    // FIXME: refactorizado! - Esto agrega imágenes de bancos en slider
+    // FIXME: refactorizado! - Esto agrega borde active a las imágenes de bancos
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
     // TODO: mostrar texto de cada imagen

@@ -93,13 +93,14 @@ detail: [] },
 
   data.internetBanks.map(element => {
     let itemSlider = `<li class="nav-item px-2 icon-bank" data-detail="${element.detail}">
-                            <img src="${element.url}" alt=${element.id} class="icon-payment-slider my-2">
+                            <img src="${element.url}" alt=${element.id} class="icon-payment-slider img-payment-internet my-2">
                         </li>`;
     $('#payment-internet').append(itemSlider);
   });
 
   $('.icon-bank').click(function() {
-    console.log($(this).data('detail'));
+    $(this).find('img').removeClass('active-bank').addClass('active-bank');
+    $(this).siblings().find('img').removeClass('active-bank');
     $('#instructions-tab1').html('');
     let detailIntBank = `<p>
             <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">${$(this).data('detail')}

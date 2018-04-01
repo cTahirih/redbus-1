@@ -33,22 +33,61 @@ window.addEventListener('load', () => {
 
   const data = {
     internetBanks: [
-      { id: 'BCP', figcaption: '', url: 'assets/images/logo-bcp.svg', detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.' ]},
-      { id: 'BBVA',  figcaption: '', url: 'assets/images/logo-bbva.svg', detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.']},
-      { id: 'Interbank', figcaption: '', url: 'assets/images/logo-interbank.svg', detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO' ]},
-      { id: 'Scotiabank', figcaption: '', url: 'assets/images/logo-scotia.svg', detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES']},
-      { id: 'Banbif', figcaption: '', url: 'assets/images/logo-banbif.svg', detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO']}
+      { id: 'BCP',
+        figcaption: '',
+        url: 'assets/images/logo-bcp.svg',
+        detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.' ]},
+      { id: 'BBVA',
+        figcaption: '',
+        url: 'assets/images/logo-bbva.svg',
+        detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.']},
+      { id: 'Interbank',
+        figcaption: '',
+        url: 'assets/images/logo-interbank.svg',
+        detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO' ]},
+      { id: 'Scotiabank',
+        figcaption: '',
+        url: 'assets/images/logo-scotia.svg',
+        detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES']},
+      { id: 'Banbif',
+        figcaption: '',
+        url: 'assets/images/logo-banbif.svg',
+        detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO']}
     ],
     cashBanks: [
       {
-        id: 'BCP', figcaption: 'Agentes y Bodegas Agencias', url: 'assets/images/logo-bcp.svg', detail: ['Agentes BCP: Brinda el código de empresa 02186.', 'Agencias BCP: Costo adicional: S/.1.00.'] },
-      { id: 'BBVA', figcaption: 'Agentes y Bodegas Agencias', url: 'assets/images/logo-bbva.svg', detail: [] },
-      { id: 'Interbank', figcaption: 'Agentes y Bodegas Agencias', url: 'assets/images/logo-interbank.svg', detail: ['Agentes Interbank: Brinda el siguiente código 2735001', 'Agencias Market de Interbank: Costo adicional S/. 2.00.'] },
-      { id: 'Banbif', figcaption: 'Agencias', url: 'assets/images/logo-banbif.svg',  detail: [] },
-      { id: 'Fullcarga', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-fullcarga.png', detail: ['Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.'] },
-      { id: 'Scotiabank', figcaption: 'Agentes y Bodegas Agencias' , url: 'assets/images/logo-scotia.svg', detail: [] },
-      { id: 'WesternUnion', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-wu.svg', detail: [] },
-      { id: 'Kasnet', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-kasnet.png', detail: [] },
+        id: 'BCP',
+        figcaption: 'Agentes y Bodegas Agencias',
+        url: 'assets/images/logo-bcp.svg',
+        detail: ['Agentes BCP: Brinda el código de empresa 02186.', 'Agencias BCP: Costo adicional: S/.1.00.'] },
+      { id: 'BBVA',
+        figcaption: 'Agentes y Bodegas Agencias',
+        url: 'assets/images/logo-bbva.svg',
+        detail: [] },
+      { id: 'Interbank',
+        figcaption: 'Agentes y Bodegas Agencias',
+        url: 'assets/images/logo-interbank.svg',
+        detail: ['Agentes Interbank: Brinda el siguiente código 2735001', 'Agencias Market de Interbank: Costo adicional S/. 2.00.'] },
+      { id: 'Banbif',
+        figcaption: 'Agencias',
+        url: 'assets/images/logo-banbif.svg',
+detail: [] },
+      { id: 'Fullcarga',
+        figcaption: 'Agentes y Bodegas',
+        url: 'assets/images/logo-fullcarga.png',
+        detail: ['Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.'] },
+      { id: 'Scotiabank',
+        figcaption: 'Agentes y Bodegas Agencias',
+        url: 'assets/images/logo-scotia.svg',
+        detail: [] },
+      { id: 'WesternUnion',
+        figcaption: 'Agentes y Bodegas',
+        url: 'assets/images/logo-wu.svg',
+        detail: [] },
+      { id: 'Kasnet',
+        figcaption: 'Agentes y Bodegas',
+        url: 'assets/images/logo-kasnet.png',
+        detail: [] },
     ]
   };
 
@@ -73,7 +112,7 @@ window.addEventListener('load', () => {
   data.cashBanks.map(element => {
     let itemCarrousel = `<li id=${element.id} class="icon-cash-bank" data-detail="${element.detail}">
                           <img src=${element.url} alt=${element.id}>
-                           <p class="text-center">${element.figcaption}</p>
+                          <p class="text-center">${element.figcaption}</p>
                         </li>`;
     $('#responsive').append(itemCarrousel);
   });
@@ -94,8 +133,20 @@ window.addEventListener('load', () => {
     // });
   });
   $('.icon-cash-bank').click(function() {
-    console.log($(this).data('detail'));
+    /* console.log($(this).data('detail'));
     console.log($(this).data('detail').split(','));
-    // data.cashBanks.forEach(console.log(data.cashBanks.detail));
+    console.log(($(this).data('detail').split(',').map((item, index) => {return  item[index];
+    }))); */
+    // console.log(($(this).data('detail').split(',').forEach(function() {
+    //   alert('hola');
+    // })));
+    console.log(data.cashBanks.map(element => {
+      let arr = element;
+      for (var i in arr) {
+        let respuesta = arr[i];
+      }
+      return respuesta;
+    }));
+    // console.log(arr);
   });
 });

@@ -60,10 +60,26 @@ window.addEventListener('load', () => {
   });
 
   data.cashBanks.map(element => {
-    let itemCarrousel = `<li>
+    let itemCarrousel = `<li id=${element.id} class="item-carrousel">
                           <img src=${element.url} alt=${element.id}>
-                           <p class"text-center">${element.figcaption}</p>
+                           <p class="text-center">${element.figcaption}</p>
                         </li>`;
     $('#responsive').append(itemCarrousel);
+  });
+  
+  $('#responsive').on('click', 'li', function() {
+    // FIXME: refactorizado! - Esto agrega
+    $(this).find('img').removeClass('active-bank').addClass('active-bank');
+    $(this).siblings().find('img').removeClass('active-bank');
+    // TODO: mostrar texto de cada imagen
+    data.cashBanks.map(element => {
+      console.log(element);
+      let details = `<li>
+                      ${element.detail}
+                    </li>`;              
+      // $('#instructions').find('li').remove();
+      $('#instructions').find('ul').append(details);
+      // $('#instructions').find('p').text('');;
+    });
   });
 });

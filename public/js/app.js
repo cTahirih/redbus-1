@@ -46,7 +46,7 @@ window.addEventListener('load', function () {
   });
 
   $('#responsive').on('click', 'li', function () {
-    // FIXME: refactorizado! - Esto agrega
+    // FIXME: refactorizado! - Esto agrega imágenes de bancos en slider
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
     // TODO: mostrar texto de cada imagen

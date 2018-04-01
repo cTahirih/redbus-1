@@ -45,10 +45,10 @@ window.addEventListener('load', () => {
       { id: 'BBVA', figcaption: 'Agentes y Bodegas Agencias', url: 'assets/images/logo-bbva.svg', detail: [] },
       { id: 'Interbank', figcaption: 'Agentes y Bodegas Agencias', url: 'assets/images/logo-interbank.svg', detail: ['Agentes Interbank: Brinda el siguiente código 2735001', 'Agencias Market de Interbank: Costo adicional S/. 2.00.'] },
       { id: 'Banbif', figcaption: 'Agencias', url: 'assets/images/logo-banbif.svg',  detail: [] },
-      { id: 'Fullcarga', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-fullcarga.svg', detail: ['Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.'] },
+      { id: 'Fullcarga', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-fullcarga.png', detail: ['Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.'] },
       { id: 'Scotiabank', figcaption: 'Agentes y Bodegas Agencias' , url: 'assets/images/logo-scotia.svg', detail: [] },
       { id: 'WesternUnion', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-wu.svg', detail: [] },
-      { id: 'Kasnet', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-kasnet.svg', detail: [] },
+      { id: 'Kasnet', figcaption: 'Agentes y Bodegas', url: 'assets/images/logo-kasnet.png', detail: [] },
     ]
   };
 
@@ -59,5 +59,11 @@ window.addEventListener('load', () => {
     $('#payment-internet').append(itemSlider);
   });
 
-
+  data.cashBanks.map(element => {
+    let itemCarrousel = `<li>
+                          <img src=${element.url} alt=${element.id}>
+                           <p class"text-center">${element.figcaption}</p>
+                        </li>`;
+    $('#responsive').append(itemCarrousel);
+  });
 });

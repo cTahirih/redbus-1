@@ -86,7 +86,11 @@ span#date {
 }
 
 ul#responsive li img {
-  border: 1px solid var(--color1)
+width: 80%;
+}
+
+ul#responsive li img {
+  border: 1px solid var(--color2);
 }
 
 .icon-payment-slider {

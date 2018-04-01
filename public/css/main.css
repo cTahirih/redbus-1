@@ -46,8 +46,14 @@ body {
   border-color: var(--color2) var(--color2) #fff;
 }
 
+/* rgba(252, 208, 106, 0.5) */
+
 .nav-tabs .nav-link {
   color: var(--color4);
+}
+
+.line-height {
+  line-height: 1.2;
 }
 
 .payment-code {
@@ -66,7 +72,8 @@ body {
   height: 20vh;  
 }
 
-.font-size-payment {
+.font-size-payment,
+.font-size-payment-total {
   font-size: 0.7em;
 }
 
@@ -114,11 +121,11 @@ ul.lSPager.lSpg {
 }
 
 .payment-icon-footer {
-  width: 7em;
+  width: 5em;
 }
 
 .fs-footer {
-  font-size: 0.86em;
+  font-size: 0.75em;
 }
 .mail {
   color: var(--color1);
@@ -128,19 +135,54 @@ ul.lSPager.lSpg {
   color: var(--color2);
 }
 
+@media (min-width: 576px) {
+  p#code {
+    font-size: 1.5em;
+  }
+
+  p#price {
+    font-size: 1em;
+  }
+}
+
 @media (min-width: 768px) {
   .font-size-payment {
     font-size: 0.9em;
   }
+  .font-size-payment-total {
+    font-size: 1.75em;
+  }
+  .img-clock, .icon-arrow {
+    width: 2.5rem;
+  }
+  .fs-footer {
+    font-size: 0.9em;
+  }
+}
 
-  p#code,
+@media (min-width: 992px) {
+  .font-size-tab {
+    font-size: 1.3rem;
+  }
+  p#code {
+    font-size: 2.5em;
+  }
   p#price {
-    font-size: 1.5em;
+    font-size: 1.3em;
+  }
+  .fs-footer {
+    font-size: 0.9em;
+  }
+  .payment-icon-footer {
+    width: 9em;
   }
 }
 
 @media (min-width: 1200px) {
-  .font-size-tab {
-    font-size: 1.3rem;
+  p#code {
+    font-size: 3em;
+  }
+  .fs-footer {
+    font-size: 1.15em;
   }
 }

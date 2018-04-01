@@ -30,48 +30,73 @@ window.addEventListener('load', function () {
   });
 
   var data = {
-    internetBanks: [{ id: 'BCP',
+    internetBanks: [{
+      id: 'BCP',
       figcaption: '',
       url: 'assets/images/logo-bcp.svg',
-      detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.'] }, { id: 'BBVA',
+      detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.']
+    }, {
+      id: 'BBVA',
       figcaption: '',
       url: 'assets/images/logo-bbva.svg',
-      detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.'] }, { id: 'Interbank',
+      detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.']
+    }, {
+      id: 'Interbank',
       figcaption: '',
       url: 'assets/images/logo-interbank.svg',
-      detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO'] }, { id: 'Scotiabank',
+      detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO']
+    }, {
+      id: 'Scotiabank',
       figcaption: '',
       url: 'assets/images/logo-scotia.svg',
-      detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES'] }, { id: 'Banbif',
+      detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES']
+    }, {
+      id: 'Banbif',
       figcaption: '',
       url: 'assets/images/logo-banbif.svg',
-      detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO'] }],
+      detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO']
+    }],
     cashBanks: [{
       id: 'BCP',
       figcaption: 'Agentes y Bodegas Agencias',
       url: 'assets/images/logo-bcp.svg',
-      detail: ['Agentes BCP: Brinda el código de empresa 02186.', 'Agencias BCP: Costo adicional: S/.1.00.'] }, { id: 'BBVA',
+      detail: ['Agentes BCP: Brinda el código de empresa 02186.', 'Agencias BCP: Costo adicional: S/.1.00.']
+    }, {
+      id: 'BBVA',
       figcaption: 'Agentes y Bodegas Agencias',
       url: 'assets/images/logo-bbva.svg',
-      detail: [] }, { id: 'Interbank',
+      detail: []
+    }, {
+      id: 'Interbank',
       figcaption: 'Agentes y Bodegas Agencias',
       url: 'assets/images/logo-interbank.svg',
-      detail: ['Agentes Interbank: Brinda el siguiente código 2735001', 'Agencias Market de Interbank: Costo adicional S/. 2.00.'] }, { id: 'Banbif',
+      detail: ['Agentes Interbank: Brinda el siguiente código 2735001', 'Agencias Market de Interbank: Costo adicional S/. 2.00.']
+    }, {
+      id: 'Banbif',
       figcaption: 'Agencias',
       url: 'assets/images/logo-banbif.svg',
-      detail: [] }, { id: 'Fullcarga',
+      detail: []
+    }, {
+      id: 'Fullcarga',
       figcaption: 'Agentes y Bodegas',
       url: 'assets/images/logo-fullcarga.png',
-      detail: ['Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.'] }, { id: 'Scotiabank',
+      detail: ['Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.']
+    }, {
+      id: 'Scotiabank',
       figcaption: 'Agentes y Bodegas Agencias',
       url: 'assets/images/logo-scotia.svg',
-      detail: [] }, { id: 'WesternUnion',
+      detail: []
+    }, {
+      id: 'WesternUnion',
       figcaption: 'Agentes y Bodegas',
       url: 'assets/images/logo-wu.svg',
-      detail: [] }, { id: 'Kasnet',
+      detail: []
+    }, {
+      id: 'Kasnet',
       figcaption: 'Agentes y Bodegas',
       url: 'assets/images/logo-kasnet.png',
-      detail: [] }]
+      detail: []
+    }]
   };
 
   data.internetBanks.map(function (element) {
@@ -115,16 +140,54 @@ window.addEventListener('load', function () {
     // console.log(($(this).data('detail').split(',').forEach(function() {
     //   alert('hola');
     // })));
-    console.log(data.cashBanks.map(function (element) {
-      var arr = element;
-      for (var i in arr) {
-        var respuesta = arr[i];
-      }
-      for (var j in respuesta) {
-        var muestra = respuesta[j];
-      }
-      return muestra;
-    }));
-    // console.log(arr);
+    // console.log(data.cashBanks.map(element => {
+    //   let arr = element;
+    //   for (var i in arr) {
+    //     let respuesta = arr[i];
+    //   }
+    //   return respuesta;
+    // }));
+    switch (true) {
+      case $(this).is('#BCP'):
+        $('.BCP').show();
+        $('.Interbank').hide();
+        $('Fullcarga').hide();
+        break;
+      case $(this).is('#BBVA'):
+        $('.BCP').hide();
+        $('.Interbank').hide();
+        $('Fullcarga').hide();
+        break;
+      case $(this).is('#Interbank'):
+        $('.Interbank').show();
+        $('.BCP').hide();
+        $('Fullcarga').hide();
+        break;
+      case $(this).is('#Banbif'):
+        $('.BCP').hide();
+        $('.Interbank').hide();
+        $('Fullcarga').hide();
+        break;
+      case $(this).is('#Fullcarga'):
+        $('.Fullcarga').show();
+        $('.BCP').hide();
+        $('.Interbank').hide();
+        break;
+      case $(this).is('#Scotiabank'):
+        $('.BCP').hide();
+        $('.Interbank').hide();
+        $('Fullcarga').hide();
+        break;
+      case $(this).is('#WesternUnion'):
+        $('.BCP').hide();
+        $('.Interbank').hide();
+        $('Fullcarga').hide();
+        break;
+      case $(this).is('#Kasnet'):
+        $('.BCP').hide();
+        $('.Interbank').hide();
+        $('Fullcarga').hide();
+        break;
+    }
   });
 });

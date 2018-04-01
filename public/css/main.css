@@ -198,8 +198,8 @@ ul.lSPager.lSpg {
   .icon-payment-slider {
     width: 10em;
   }
-  .lSAction {
-    display: none!important;
+  #payment-internet-tab1.lSAction {
+    display: none !important;
   }
 }
 

@@ -40,7 +40,14 @@ window.addEventListener('load', function () {
     $('#payment-internet').append(itemSlider);
   });
 
-  for (var i in data.internetBanks) {
-    console.log(data.internetBanks.data());
-  }
+  $('.icon-bank').click(function () {
+    if ($(this).data("name") === 'BCP') {
+      console.log(data.internetBanks.detail);
+    }
+  });
+
+  data.cashBanks.map(function (element) {
+    var itemCarrousel = '<li>\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                           <p class"text-center">' + element.figcaption + '</p>\n                        </li>';
+    $('#responsive').append(itemCarrousel);
+  });
 });

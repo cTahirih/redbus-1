@@ -147,6 +147,9 @@ ul.lSPager.lSpg {
   p#price {
     font-size: 1em;
   }
+  .icon-payment-slider {
+    width: 8em;
+  }
 }
 
 @media (min-width: 768px) {
@@ -161,6 +164,9 @@ ul.lSPager.lSpg {
   }
   .fs-footer {
     font-size: 0.9em;
+  }
+  .icon-payment-slider {
+    width: 9em;
   }
 }
 
@@ -179,6 +185,9 @@ ul.lSPager.lSpg {
   }
   .payment-icon-footer {
     width: 9em;
+  }
+  .icon-payment-slider {
+    width: 10em;
   }
 }
 

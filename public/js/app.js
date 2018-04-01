@@ -29,6 +29,16 @@ window.addEventListener('load', function () {
     }]
   });
 
+  $('#payment-internet').lightSlider({
+    item: 5,
+    responsive: [{
+      breakpoint: 992,
+      settings: {
+        item: 3
+      }
+    }]
+  });
+
   var data = {
     internetBanks: [{
       id: 'BCP',
@@ -108,7 +118,7 @@ window.addEventListener('load', function () {
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
     $('#instructions-tab1').html('');
-    var detailIntBank = '<p>\n            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">' + $(this).data('detail') + '\n          </p>\n          <p>\n            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu c\xF3digo CIP: 9125682 y sigue los pasos.</p>';
+    var detailIntBank = '<p>\n            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">' + $(this).data('detail') + '\n          </p>\n          <p>\n            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu c\xF3digo CIP: <span class="code"></span> y sigue los pasos.</p>';
     $('#instructions-tab1').append(detailIntBank);
   });
 
@@ -190,4 +200,12 @@ window.addEventListener('load', function () {
         break;
     }
   });
+  // code payment
+  var code = '9125682';
+  $('.code').text(code);
+  if (code.length > 8) {
+    fontSize -= 0.1;
+    var newFontSize = fontSize + 'em';
+    console.log(newFontSize);
+  }
 });

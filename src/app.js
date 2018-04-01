@@ -33,11 +33,11 @@ window.addEventListener('load', () => {
 
   const data = {
     internetBanks: [
-      { id: 'BCP', name: 'BCP', figcaption: '', url: 'assets/images/logo-bcp.svg', detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.' ]},
-      { id: 'BBVA', name: 'BBVA', figcaption: '', url: 'assets/images/logo-bbva.svg', detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.']},
-      { id: 'Interbank', name: 'Interbank', figcaption: '', url: 'assets/images/logo-interbank.svg', detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO' ]},
-      { id: 'Scotiabank', name: 'Scotiabank', figcaption: '', url: 'assets/images/logo-scotia.svg', detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES']},
-      { id: 'Banbif', name: 'Banbif', figcaption: '', url: 'assets/images/logo-banbif.svg', detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO']}
+      { id: 'BCP', figcaption: '', url: 'assets/images/logo-bcp.svg', detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.' ]},
+      { id: 'BBVA',  figcaption: '', url: 'assets/images/logo-bbva.svg', detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.']},
+      { id: 'Interbank', figcaption: '', url: 'assets/images/logo-interbank.svg', detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO' ]},
+      { id: 'Scotiabank', figcaption: '', url: 'assets/images/logo-scotia.svg', detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES']},
+      { id: 'Banbif', figcaption: '', url: 'assets/images/logo-banbif.svg', detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO']}
     ],
     cashBanks: [
       {
@@ -53,10 +53,16 @@ window.addEventListener('load', () => {
   };
 
   data.internetBanks.map(element => {
-    let itemSlider = `<li class="nav-item px-2 icon-bank" data-name="${element.name}">
+    let itemSlider = `<li class="nav-item px-2 icon-bank" data-detail="${element.detail}">
                             <img src="${element.url}" alt=${element.id} class="icon-payment-slider my-2">
                         </li>`;
     $('#payment-internet').append(itemSlider);
+  });
+
+  $('.icon-bank').click(function() {
+    console.log($(this).data('detail'));
+    $('#instruction').html('');
+    $('#instruction').append($(this).data('detail'));
   });
 
   data.cashBanks.map(element => {

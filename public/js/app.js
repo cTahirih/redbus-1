@@ -36,10 +36,9 @@ window.addEventListener('load', function () {
   };
 
   data.internetBanks.map(function (element) {
-    var itemSlider = '<li class="nav-item px-2">\n                            <img src=' + element.url + ' alt=' + element.id + ' class="icon-payment-slider my-2">          \n                        </li>';
+    var itemSlider = '<li class="nav-item px-2 icon-bank" data-detail="' + element.detail + '">\n                            <img src="' + element.url + '" alt=' + element.id + ' class="icon-payment-slider my-2">\n                        </li>';
     $('#payment-internet').append(itemSlider);
   });
-
   data.cashBanks.map(function (element) {
     var itemCarrousel = '<li id=' + element.id + ' class="item-carrousel">\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                           <p class="text-center">' + element.figcaption + '</p>\n                        </li>';
     $('#responsive').append(itemCarrousel);

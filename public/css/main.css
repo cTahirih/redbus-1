@@ -89,6 +89,10 @@ ul#responsive li img {
 width: 80%;
 }
 
+ul#payment-internet {
+  height: auto!important;
+}
+
 ul#responsive li img {
   border: 1px solid var(--color2);
 }
@@ -193,6 +197,9 @@ ul.lSPager.lSpg {
   }
   .icon-payment-slider {
     width: 10em;
+  }
+  .lSAction {
+    display: none!important;
   }
 }
 

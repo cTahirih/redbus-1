@@ -29,7 +29,19 @@ window.addEventListener('load', () => {
         }
       }
     ]
-  });  
+  }); 
+  
+  $('#payment-internet').lightSlider({
+    item: 5,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          item: 3
+        }
+      }
+    ]
+  });
 
   const data = {
     internetBanks: [
@@ -67,7 +79,7 @@ window.addEventListener('load', () => {
             <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">${$(this).data('detail')}
           </p>
           <p>
-            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu código CIP: 9125682 y sigue los pasos.</p>`;
+            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu código CIP: <span class="code"></span> y sigue los pasos.</p>`;
     $('#instructions-tab1').append(detailIntBank);
   });
 
@@ -92,6 +104,14 @@ window.addEventListener('load', () => {
       // $('#instructions').find('li').remove();
       $('#instructions').find('ul').append(details);
       // $('#instructions').find('p').text('');;
-    });
+    });    
   });
+  // code payment
+  let code = '9125682';
+  $('.code').text(code);
+  if (code.length > 8) {
+    fontSize -= 0.1;
+    let newFontSize = fontSize + 'em';
+    console.log(newFontSize);
+  }
 });

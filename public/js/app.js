@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
   });
 
   data.cashBanks.map(function (element) {
-    var itemCarrousel = '<li id=' + element.id + ' class="item-carrousel">\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                           <p class="text-center">' + element.figcaption + '</p>\n                        </li>';
+    var itemCarrousel = '<li id=' + element.id + ' class="icon-cash-bank" data-detail="' + element.detail + '">\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                           <p class="text-center">' + element.figcaption + '</p>\n                        </li>';
     $('#responsive').append(itemCarrousel);
   });
 
@@ -57,12 +57,19 @@ window.addEventListener('load', function () {
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
     // TODO: mostrar texto de cada imagen
-    data.cashBanks.map(function (element) {
-      console.log(element);
-      var details = '<li>\n                      ' + element.detail + '\n                    </li>';
-      // $('#instructions').find('li').remove();
-      $('#instructions').find('ul').append(details);
-      // $('#instructions').find('p').text('');;
-    });
+    // data.cashBanks.map(element => {
+    //   console.log(element);
+    //   let details = `<li>
+    //                   ${element.detail}
+    //                 </li>`;              
+    //   // $('#instructions').find('li').remove();
+    //   $('#instructions').find('ul').append(details);
+    //   // $('#instructions').find('p').text('');;
+    // });
+  });
+  $('.icon-cash-bank').click(function () {
+    console.log($(this).data('detail'));
+    console.log($(this).data('detail').split(','));
+    // data.cashBanks.forEach(console.log(data.cashBanks.detail));
   });
 });

@@ -39,6 +39,13 @@ window.addEventListener('load', function () {
     var itemSlider = '<li class="nav-item px-2 icon-bank" data-detail="' + element.detail + '">\n                            <img src="' + element.url + '" alt=' + element.id + ' class="icon-payment-slider my-2">\n                        </li>';
     $('#payment-internet').append(itemSlider);
   });
+
+  $('.icon-bank').click(function () {
+    console.log($(this).data('detail'));
+    $('#instruction').html('');
+    $('#instruction').append($(this).data('detail'));
+  });
+
   data.cashBanks.map(function (element) {
     var itemCarrousel = '<li>\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                           <p class"text-center">' + element.figcaption + '</p>\n                        </li>';
     $('#responsive').append(itemCarrousel);

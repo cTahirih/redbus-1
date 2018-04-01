@@ -42,8 +42,9 @@ window.addEventListener('load', function () {
 
   $('.icon-bank').click(function () {
     console.log($(this).data('detail'));
-    $('#instruction').html('');
-    $('#instruction').append($(this).data('detail'));
+    $('#instructions-tab1').html('');
+    var detailIntBank = '<p>\n            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">' + $(this).data('detail') + '\n          </p>\n          <p>\n            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu c\xF3digo CIP: 9125682 y sigue los pasos.</p>';
+    $('#instructions-tab1').append(detailIntBank);
   });
 
   data.cashBanks.map(function (element) {
@@ -52,7 +53,7 @@ window.addEventListener('load', function () {
   });
 
   $('#responsive').on('click', 'li', function () {
-    // FIXME: refactorizado! - Esto agrega imágenes de bancos en slider
+    // FIXME: refactorizado! - Esto agrega borde active a las imágenes de bancos
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
     // TODO: mostrar texto de cada imagen

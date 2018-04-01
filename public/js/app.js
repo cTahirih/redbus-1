@@ -41,9 +41,11 @@ window.addEventListener('load', function () {
   });
 
   $('.icon-bank').click(function () {
-    console.log($(this).data('detail'));
+    // console.log($(this).data('detail'));
+    var details = $(this).data('detail');
+    console.log(details);
     $('#instruction').html('');
-    $('#instruction').append($(this).data('detail'));
+    $('#instruction').append(details);
   });
 
   data.cashBanks.map(function (element) {

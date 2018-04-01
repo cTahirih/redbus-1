@@ -127,56 +127,37 @@ window.addEventListener('load', function () {
     $('#responsive').append(itemCarrousel);
   });
 
+  data.cashBanks.map(function (element) {
+    var itemCarrousel = '<li id=' + element.id + ' class="icon-cash-bank" data-detail="' + element.detail + '">\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                          <p class="text-center">' + element.figcaption + '</p>\n                        </li>';
+    $('#responsive').append(itemCarrousel);
+  });
+
   $('#responsive').on('click', 'li', function () {
-    // FIXME: refactorizado! - Esto agrega borde active a las imágenes de bancos
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
-    // TODO: mostrar texto de cada imagen
-    // data.cashBanks.map(element => {
-    //   console.log(element);
-    //   let details = `<li>
-    //                   ${element.detail}
-    //                 </li>`;              
-    //   // $('#instructions').find('li').remove();
-    //   $('#instructions').find('ul').append(details);
-    //   // $('#instructions').find('p').text('');;
-    // });
   });
+
   $('.icon-cash-bank').click(function () {
-    /* console.log($(this).data('detail'));
-    console.log($(this).data('detail').split(','));
-    console.log(($(this).data('detail').split(',').map((item, index) => {return  item[index];
-    }))); */
-    // console.log(($(this).data('detail').split(',').forEach(function() {
-    //   alert('hola');
-    // })));
-    // console.log(data.cashBanks.map(element => {
-    //   let arr = element;
-    //   for (var i in arr) {
-    //     let respuesta = arr[i];
-    //   }
-    //   return respuesta;
-    // }));
     switch (true) {
       case $(this).is('#BCP'):
         $('.BCP').show();
         $('.Interbank').hide();
-        $('Fullcarga').hide();
+        $('.Fullcarga').hide();
         break;
       case $(this).is('#BBVA'):
         $('.BCP').hide();
         $('.Interbank').hide();
-        $('Fullcarga').hide();
+        $('.Fullcarga').hide();
         break;
       case $(this).is('#Interbank'):
         $('.Interbank').show();
         $('.BCP').hide();
-        $('Fullcarga').hide();
+        $('.Fullcarga').hide();
         break;
       case $(this).is('#Banbif'):
         $('.BCP').hide();
         $('.Interbank').hide();
-        $('Fullcarga').hide();
+        $('.Fullcarga').hide();
         break;
       case $(this).is('#Fullcarga'):
         $('.Fullcarga').show();
@@ -186,17 +167,17 @@ window.addEventListener('load', function () {
       case $(this).is('#Scotiabank'):
         $('.BCP').hide();
         $('.Interbank').hide();
-        $('Fullcarga').hide();
+        $('.Fullcarga').hide();
         break;
       case $(this).is('#WesternUnion'):
         $('.BCP').hide();
         $('.Interbank').hide();
-        $('Fullcarga').hide();
+        $('.Fullcarga').hide();
         break;
       case $(this).is('#Kasnet'):
         $('.BCP').hide();
         $('.Interbank').hide();
-        $('Fullcarga').hide();
+        $('.Fullcarga').hide();
         break;
     }
   });

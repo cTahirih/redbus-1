@@ -124,6 +124,10 @@ ul.lSPager.lSpg {
    border: 3px solid var(--color1)!important;
 }
 
+.BCP p>span, .Interbank p>span, .Fullcarga p>span {
+  color: var(--color1);
+}
+
 /*footer*/
 
 .footer-icon-print {

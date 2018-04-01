@@ -41,7 +41,21 @@ window.addEventListener('load', function () {
   });
 
   data.cashBanks.map(function (element) {
-    var itemCarrousel = '<li>\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                           <p class"text-center">' + element.figcaption + '</p>\n                      </li>';
+    var itemCarrousel = '<li id=' + element.id + ' class="item-carrousel">\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                           <p class="text-center">' + element.figcaption + '</p>\n                        </li>';
     $('#responsive').append(itemCarrousel);
+  });
+
+  $('#responsive').on('click', 'li', function () {
+    // FIXME: refactorizado! - Esto agrega
+    $(this).find('img').removeClass('active-bank').addClass('active-bank');
+    $(this).siblings().find('img').removeClass('active-bank');
+    // TODO: mostrar texto de cada imagen
+    data.cashBanks.map(function (element) {
+      console.log(element);
+      var details = '<li>\n                      ' + element.detail + '\n                    </li>';
+      // $('#instructions').find('li').remove();
+      $('#instructions').find('ul').append(details);
+      // $('#instructions').find('p').text('');;
+    });
   });
 });

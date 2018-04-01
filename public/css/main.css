@@ -108,6 +108,11 @@ ul.lSPager.lSpg {
 .instructions {
   color: var(--color1);
 }
+
+.active-bank {
+   border: 3px solid var(--color1)!important;
+}
+
 /*footer*/
 
 .footer-icon-print {

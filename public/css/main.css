@@ -133,6 +133,10 @@ ul.lSPager.lSpg {
    border: 3px solid var(--color1)!important;
 }
 
+.BCP p>span, .Interbank p>span, .Fullcarga p>span {
+  color: var(--color1);
+}
+
 /*footer*/
 
 .footer-icon-print {
@@ -215,7 +219,7 @@ ul.lSPager.lSpg {
     width: 10em;
   }
   #payment-internet-tab1.lSAction {
-    display: none!important;
+    display: none !important;
   }
 }
 

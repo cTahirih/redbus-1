@@ -44,7 +44,6 @@ window.addEventListener('load', () => {
   // slider payment-internet
   $('#payment-internet').lightSlider({
     item: 5,
-    loop: false,
     responsive: [
       {
         breakpoint: 992,

@@ -224,7 +224,7 @@ window.addEventListener('load', () => {
     }
   });
   // resize code payment
-  let code = '9125682';
+  /*let code = '9125682';
   $('.code').text(code);
   // let code = $('.code').text();
   let width = 0;
@@ -245,5 +245,5 @@ window.addEventListener('load', () => {
     fontSize -= 0.2;
     let newFontSize = fontSize + 'em';
     $('.code').css('font-size', newFontSize);
-  }                
+  }*/                
 });

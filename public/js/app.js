@@ -195,27 +195,26 @@ window.addEventListener('load', function () {
     }
   });
   // resize code payment
-  var code = '9125682';
+  /*let code = '9125682';
   $('.code').text(code);
   // let code = $('.code').text();
-  var width = 0;
-  if (self.screen) {
+  let width = 0;
+  if (self.screen) {   
     width = screen.width;
-  } else if (self.java) {
-    // for NN3 with enabled Java
-    var jkit = java.awt.Toolkit.getDefaultToolkit();
-    var scrsize = jkit.getScreenSize();
+  } else if (self.java) { // for NN3 with enabled Java
+    let jkit = java.awt.Toolkit.getDefaultToolkit();
+    let scrsize = jkit.getScreenSize();
     width = scrsize.width;
   }
   if (width > 0 && width < 576 && code.length >= 8) {
-    var fontSize = 1;
+    let fontSize = 1;
     fontSize -= 0.2;
-    var newFontSize = fontSize + 'em';
+    let newFontSize = fontSize + 'em';
     $('.code').css('font-size', newFontSize);
   } else {
-    var _fontSize = 2.3;
-    _fontSize -= 0.2;
-    var _newFontSize = _fontSize + 'em';
-    $('.code').css('font-size', _newFontSize);
-  }
+    let fontSize = 2.3;
+    fontSize -= 0.2;
+    let newFontSize = fontSize + 'em';
+    $('.code').css('font-size', newFontSize);
+  }*/
 });

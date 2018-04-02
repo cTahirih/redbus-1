@@ -1,4 +1,16 @@
 window.addEventListener('load', () => {
+  // // function tab
+  // $('.tabs-menu a').click(function(event) {
+  //   event.preventDefault();
+  //   $(this).parent().addClass('current');
+  //   $(this).parent().siblings().removeClass('current');
+  //   var tab = $(this).attr('href');
+  //   // $('.tab-pane').not(tab).css('display', 'none');
+  //   $('.tab-pane').removeClass('show active').addClass('show active');
+  //   $('.tab-pane').not(tab).css('display', 'none');
+  //   $('.tab-pane').siblings().addClass('show active');
+  // });
+  // slider payment-cash
   $('#responsive').lightSlider({
     item: 4,
     loop: false,
@@ -29,19 +41,20 @@ window.addEventListener('load', () => {
     }
     ]
   }); 
-  
+  // slider payment-internet
   $('#payment-internet').lightSlider({
     item: 5,
     responsive: [
       {
         breakpoint: 992,
         settings: {
-          item: 3
+          item: 3,
+          slideMargin: 6
         }
       }
     ]
   });
-
+  // data of icon banks
   const data = {
     internetBanks: [{
       id: 'BCP',
@@ -124,23 +137,24 @@ window.addEventListener('load', () => {
     },
     ]
   };
-
+  // print in document icon payment internet for slider
   data.internetBanks.map(element => {
-    let itemSlider = `<li class="nav-item px-2 icon-bank" data-detail="${element.detail}">
+    let itemSlider = `<li class="nav-item icon-bank" data-detail="${element.detail}">
                             <img src="${element.url}" alt=${element.id} class="icon-payment-slider img-payment-internet my-2">
                         </li>`;
     $('#payment-internet').append(itemSlider);
   });
-
+  // event for get details icons
   $('.icon-bank').click(function() {
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
     $('#instructions-tab1').html('');
-    let detailIntBank = `<p>
-            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">${$(this).data('detail')}
-          </p>
-          <p>
-            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu código CIP: <span class="code"></span> y sigue los pasos.</p>`;
+    let detailIntBank = `<p class="d-flex font-size-payment-instruction">
+            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1"><span>${$(this).data('detail')}</span></p>
+          <p class="d-flex font-size-payment-instruction">
+            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">
+            <span>Ingresa tu código CIP: 9125682 y sigue los pasos.</span>
+          </p>`;
     $('#instructions-tab1').append(detailIntBank);
   });
 
@@ -233,12 +247,27 @@ window.addEventListener('load', () => {
       break;
     }
   });
-  // code payment
+  // resize code payment
   let code = '9125682';
   $('.code').text(code);
-  if (code.length > 8) {
-    fontSize -= 0.1;
-    let newFontSize = fontSize + 'em';
-    console.log(newFontSize);
+  // let code = $('.code').text();
+  let width = 0;
+  if (self.screen) {   
+    width = screen.width;
+  } else if (self.java) { // for NN3 with enabled Java
+    let jkit = java.awt.Toolkit.getDefaultToolkit();
+    let scrsize = jkit.getScreenSize();
+    width = scrsize.width;
   }
+  if (width > 0 && width < 576 && code.length >= 8) {
+    let fontSize = 1;
+    fontSize -= 0.2;
+    let newFontSize = fontSize + 'em';
+    $('.code').css('font-size', newFontSize);
+  } else {
+    let fontSize = 2.3;
+    fontSize -= 0.2;
+    let newFontSize = fontSize + 'em';
+    $('.code').css('font-size', newFontSize);
+  }                
 });

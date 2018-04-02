@@ -23,7 +23,7 @@
 
   <main class="container px-0">
     <nav>
-      <ul class="nav nav-tabs px-3">
+      <ul class="nav nav-tabs tabs-menu px-3">
         <li class="nav-item">
           <a class="nav-link font-weight-bold font-size-tab active" href="#internet" role="tab" data-toggle="tab">Banca por Internet</a>
         </li>
@@ -37,7 +37,7 @@
         <div class="d-flex flex-row line-height">
           <div class="payment-code text-center col-4 col-md-3 p-2 d-flex flex-column align-items-center justify-content-center rounded-left">
             <span class="font-size-payment">Código de pago</span>
-            <p class="font-weight-bold mb-0 code" id="code"><!--code--></p>
+            <p class="font-weight-bold mb-0 code" id="code">9125682<!--code--></p>
           </div>
           <div class="payment-price color-gray col-3 col-md-4 px-2 d-flex flex-column align-items-center justify-content-center">
             <span class="font-size-payment-total font-weight-bold">Total</span>
@@ -50,19 +50,20 @@
             </p>
           </div>
         </div>
-        <p class="mt-3">Selecciona dónde quieres pagar.</p>
-        <nav class="container">
+        <p class="mt-3 font-size-payment-instruction">Selecciona dónde quieres pagar.</p>
+        <nav id="payment-internet-tab1">
           <ul id="payment-internet" class="nav row d-flex justify-content-center ml-3">
             <!-- slider -->
           </ul>
         </nav>
         <div id="instructions-tab1">
-          <p>
-            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">Selecciona la opción Pago de servicios > EMPRESAS > PAGOEFECTIVO > SOLES.
+          <p class="d-flex font-size-payment-instruction">
+            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">
+            <span>Selecciona la opción Pago de servicios > EMPRESAS > PAGOEFECTIVO > SOLES.</span>
             <!-- instruction -->
           </p>
-          <p>
-            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu código CIP: 9125682 y sigue los pasos.</p>
+          <p class="d-flex font-size-payment-instruction">
+            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1"><span>Ingresa tu código CIP: 9125682 y sigue los pasos.</span></p>
         </div>
         <a href="https://ubicanos.pagoefectivo.pe/#/?tienda=[idServicio]&moneda=1&monto=100.00&ubicame=true&_k=9nbufb" target="_blank"
           class="btn w-100 text-white button-payment">
@@ -72,7 +73,7 @@
         <div class="d-flex flex-row">
           <div class="payment-code text-center col-4 col-md-3 p-2 d-flex flex-column align-items-center justify-content-center rounded-left">
             <span class="font-size-payment">Código de pago</span>
-            <p class="font-weight-bold mb-0 code" id="code"><!-- code--></p>
+            <p class="font-weight-bold mb-0 code" id="code">9125682<!-- code--></p>
           </div>
           <div class="payment-price color-gray col-3 col-md-4 px-2 d-flex flex-column align-items-center justify-content-center">
             <span class="font-size-payment-total font-weight-bold">Total</span>

@@ -1,6 +1,18 @@
 'use strict';
 
 window.addEventListener('load', function () {
+  // // function tab
+  // $('.tabs-menu a').click(function(event) {
+  //   event.preventDefault();
+  //   $(this).parent().addClass('current');
+  //   $(this).parent().siblings().removeClass('current');
+  //   var tab = $(this).attr('href');
+  //   // $('.tab-pane').not(tab).css('display', 'none');
+  //   $('.tab-pane').removeClass('show active').addClass('show active');
+  //   $('.tab-pane').not(tab).css('display', 'none');
+  //   $('.tab-pane').siblings().addClass('show active');
+  // });
+  // slider payment-cash
   $('#responsive').lightSlider({
     item: 4,
     loop: false,
@@ -28,17 +40,18 @@ window.addEventListener('load', function () {
       }
     }]
   });
-
+  // slider payment-internet
   $('#payment-internet').lightSlider({
     item: 5,
     responsive: [{
       breakpoint: 992,
       settings: {
-        item: 3
+        item: 3,
+        slideMargin: 6
       }
     }]
   });
-
+  // data of icon banks
   var data = {
     internetBanks: [{
       id: 'BCP',
@@ -108,18 +121,23 @@ window.addEventListener('load', function () {
       detail: []
     }]
   };
-
+  // print in document icon payment internet for slider
   data.internetBanks.map(function (element) {
-    var itemSlider = '<li class="nav-item px-2 icon-bank" data-detail="' + element.detail + '">\n                            <img src="' + element.url + '" alt=' + element.id + ' class="icon-payment-slider img-payment-internet my-2">\n                        </li>';
+    var itemSlider = '<li class="nav-item icon-bank" data-detail="' + element.detail + '">\n                            <img src="' + element.url + '" alt=' + element.id + ' class="icon-payment-slider img-payment-internet my-2">\n                        </li>';
     $('#payment-internet').append(itemSlider);
   });
-
+  // event for get details icons
   $('.icon-bank').click(function () {
     $(this).find('img').removeClass('active-bank').addClass('active-bank');
     $(this).siblings().find('img').removeClass('active-bank');
     $('#instructions-tab1').html('');
-    var detailIntBank = '<p>\n            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1">' + $(this).data('detail') + '\n          </p>\n          <p>\n            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">Ingresa tu c\xF3digo CIP: <span class="code"></span> y sigue los pasos.</p>';
+    var detailIntBank = '<p class="d-flex font-size-payment-instruction">\n            <img src="assets/images/number-one-in-a-circle.png" alt="1" class="img-clock mx-1"><span>' + $(this).data('detail') + '</span></p>\n          <p class="d-flex font-size-payment-instruction">\n            <img src="assets/images/number-two-in-a-circle.png" alt="1" class="img-clock mx-1">\n            <span>Ingresa tu c\xF3digo CIP: 9125682 y sigue los pasos.</span>\n          </p>';
     $('#instructions-tab1').append(detailIntBank);
+  });
+
+  data.cashBanks.map(function (element) {
+    var itemCarrousel = '<li id=' + element.id + ' class="icon-cash-bank" data-detail="' + element.detail + '">\n                          <img src=' + element.url + ' alt=' + element.id + '>\n                          <p class="text-center">' + element.figcaption + '</p>\n                        </li>';
+    $('#responsive').append(itemCarrousel);
   });
 
   data.cashBanks.map(function (element) {
@@ -200,12 +218,28 @@ window.addEventListener('load', function () {
         break;
     }
   });
-  // code payment
+  // resize code payment
   var code = '9125682';
   $('.code').text(code);
-  if (code.length > 8) {
-    fontSize -= 0.1;
+  // let code = $('.code').text();
+  var width = 0;
+  if (self.screen) {
+    width = screen.width;
+  } else if (self.java) {
+    // for NN3 with enabled Java
+    var jkit = java.awt.Toolkit.getDefaultToolkit();
+    var scrsize = jkit.getScreenSize();
+    width = scrsize.width;
+  }
+  if (width > 0 && width < 576 && code.length >= 8) {
+    var fontSize = 1;
+    fontSize -= 0.2;
     var newFontSize = fontSize + 'em';
-    console.log(newFontSize);
+    $('.code').css('font-size', newFontSize);
+  } else {
+    var _fontSize = 2.3;
+    _fontSize -= 0.2;
+    var _newFontSize = _fontSize + 'em';
+    $('.code').css('font-size', _newFontSize);
   }
 });

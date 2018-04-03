@@ -90,8 +90,8 @@ span#date {
   font-size: 1.2em;
 }
 
-ul#responsive li img {
-width: 80%;
+.lightSlider.lsGrab>* {
+  cursor: pointer;
 }
 
 ul#payment-internet {
@@ -102,7 +102,8 @@ ul#responsive li img {
   border: 1px solid var(--color2);
 }
 
-.icon-payment-slider {
+.icon-payment-slider,
+ul#responsive li img {
   width: 5em;
   border: 1px solid var(--color2);
 }
@@ -169,7 +170,8 @@ ul.lSPager.lSpg {
   p#price {
     font-size: 1em;
   }
-  .icon-payment-slider {
+  .icon-payment-slider,
+  ul#responsive li img {
     width: 6em;
   }
 }
@@ -191,7 +193,8 @@ ul.lSPager.lSpg {
   .fs-footer {
     font-size: 0.9em;
   }
-  .icon-payment-slider {
+  .icon-payment-slider,
+  ul#responsive li img {
     width: 9em;
   }
 }
@@ -212,7 +215,8 @@ ul.lSPager.lSpg {
   .payment-icon-footer {
     width: 9em;
   }
-  .icon-payment-slider {
+  .icon-payment-slider,
+  ul#responsive li img {
     width: 10em;
   }
   #payment-internet-tab1.lSAction {

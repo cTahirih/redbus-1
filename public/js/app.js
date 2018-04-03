@@ -45,23 +45,28 @@ window.addEventListener('load', function () {
     internetBanks: [{
       id: 'BCP',
       figcaption: '',
-      url: 'assets/images/logo-bcp.svg'
+      url: 'assets/images/logo-bcp.svg',
+      detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.']
     }, {
       id: 'BBVA',
       figcaption: '',
-      url: 'assets/images/logo-bbva.svg'
+      url: 'assets/images/logo-bbva.svg',
+      detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.']
     }, {
       id: 'Interbank',
       figcaption: '',
-      url: 'assets/images/logo-interbank.svg'
+      url: 'assets/images/logo-interbank.svg',
+      detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO']
     }, {
       id: 'Scotiabank',
       figcaption: '',
-      url: 'assets/images/logo-scotia.svg'
+      url: 'assets/images/logo-scotia.svg',
+      detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES']
     }, {
       id: 'Banbif',
       figcaption: '',
-      url: 'assets/images/logo-banbif.svg'
+      url: 'assets/images/logo-banbif.svg',
+      detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO']
     }],
     cashBanks: [{
       id: 'BCP',

@@ -94,6 +94,10 @@ ul#responsive li img {
 width: 80%;
 }
 
+.lightSlider.lsGrab>* {
+  cursor: pointer;
+}
+
 ul#payment-internet {
   height: auto!important;
 }

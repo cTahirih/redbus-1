@@ -1,17 +1,6 @@
 'use strict';
 
 window.addEventListener('load', function () {
-  // // function tab
-  // $('.tabs-menu a').click(function(event) {
-  //   event.preventDefault();
-  //   $(this).parent().addClass('current');
-  //   $(this).parent().siblings().removeClass('current');
-  //   var tab = $(this).attr('href');
-  //   // $('.tab-pane').not(tab).css('display', 'none');
-  //   $('.tab-pane').removeClass('show active').addClass('show active');
-  //   $('.tab-pane').not(tab).css('display', 'none');
-  //   $('.tab-pane').siblings().addClass('show active');
-  // });
   // slider payment-cash
   $('#responsive').lightSlider({
     item: 4,

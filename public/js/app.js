@@ -45,69 +45,56 @@ window.addEventListener('load', function () {
     internetBanks: [{
       id: 'BCP',
       figcaption: '',
-      url: 'assets/images/logo-bcp.svg',
-      detail: ['Selecciona la opción Pago de servicios > EMPRESAS>PAGOEFECTIVO > SOLES.']
+      url: 'assets/images/logo-bcp.svg'
     }, {
       id: 'BBVA',
       figcaption: '',
-      url: 'assets/images/logo-bbva.svg',
-      detail: ['Selecciona la opción Pago de servicios > De Instituciones y Empresas > Busca por nombre > PAGOEFECTIVO > PAGOEFECTIVOSOLES.']
+      url: 'assets/images/logo-bbva.svg'
     }, {
       id: 'Interbank',
       figcaption: '',
-      url: 'assets/images/logo-interbank.svg',
-      detail: ['Selecciona la opción Pago a Instituciones o Empresa > Empresa: PAGOEFECTIVO > Servicio: PAGOEFECTIVO']
+      url: 'assets/images/logo-interbank.svg'
     }, {
       id: 'Scotiabank',
       figcaption: '',
-      url: 'assets/images/logo-scotia.svg',
-      detail: ['Selecciona la opción Pagos > Otras Instituciones > Otros > Busca por Empresa/Servicio: PAGOEFECTIVO > Selecciona: PAGOEFECTIVO SOLES']
+      url: 'assets/images/logo-scotia.svg'
     }, {
       id: 'Banbif',
       figcaption: '',
-      url: 'assets/images/logo-banbif.svg',
-      detail: ['Selecciona la opción Pago de servicios > Busca por Empresa y escribe PAGOEFECTIVO > Selecciona la empresa PAGOEFECTIVO']
+      url: 'assets/images/logo-banbif.svg'
     }],
     cashBanks: [{
       id: 'BCP',
       figcaption: 'Agentes y Bodegas Agencias',
-      url: 'assets/images/logo-bcp.svg',
-      detail: ['Agentes BCP: Brinda el código de empresa 02186.', 'Agencias BCP: Costo adicional: S/.1.00.']
+      url: 'assets/images/logo-bcp.svg'
     }, {
       id: 'BBVA',
       figcaption: 'Agentes y Bodegas Agencias',
-      url: 'assets/images/logo-bbva.svg',
-      detail: []
+      url: 'assets/images/logo-bbva.svg'
     }, {
       id: 'Interbank',
       figcaption: 'Agentes y Bodegas Agencias',
-      url: 'assets/images/logo-interbank.svg',
-      detail: ['Agentes Interbank: Brinda el siguiente código 2735001', 'Agencias Market de Interbank: Costo adicional S/. 2.00.']
+      url: 'assets/images/logo-interbank.svg'
     }, {
       id: 'Banbif',
       figcaption: 'Agencias',
-      url: 'assets/images/logo-banbif.svg',
-      detail: []
+      url: 'assets/images/logo-banbif.svg'
     }, {
       id: 'Fullcarga',
       figcaption: 'Agentes y Bodegas',
-      url: 'assets/images/logo-fullcarga.png',
-      detail: ['Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.']
+      url: 'assets/images/logo-fullcarga.png'
     }, {
       id: 'Scotiabank',
       figcaption: 'Agentes y Bodegas Agencias',
-      url: 'assets/images/logo-scotia.svg',
-      detail: []
+      url: 'assets/images/logo-scotia.svg'
     }, {
       id: 'WesternUnion',
       figcaption: 'Agentes y Bodegas',
-      url: 'assets/images/logo-wu.svg',
-      detail: []
+      url: 'assets/images/logo-wu.svg'
     }, {
       id: 'Kasnet',
       figcaption: 'Agentes y Bodegas',
-      url: 'assets/images/logo-kasnet.png',
-      detail: []
+      url: 'assets/images/logo-kasnet.png'
     }]
   };
   // print in document icon payment internet for slider
@@ -142,49 +129,40 @@ window.addEventListener('load', function () {
   $('.icon-cash-bank').click(function () {
     switch (true) {
       case $(this).is('#BCP'):
-        $('.BCP').show();
-        $('.Interbank').hide();
-        $('.Fullcarga').hide();
+        $('#instructions-tab2').html('');
+        var detailCashBankBcp = '<div class="BCP">\n            <p class="float-left">\n              <span class="mr-2">(*)</span>Agentes BCP: Brinda el c\xF3digo de empresa 02186.</p>\n            <p class="float-right">\n              <span class="mr-2">(*)</span>Agencias BCP: Costo adicional: S/.1.00.</p>\n          </div>';
+        $('#instructions-tab2').append(detailCashBankBcp);
         break;
       case $(this).is('#BBVA'):
-        $('.BCP').hide();
-        $('.Interbank').hide();
-        $('.Fullcarga').hide();
+        $('#instructions-tab2').html('');
         break;
       case $(this).is('#Interbank'):
-        $('.Interbank').show();
-        $('.BCP').hide();
-        $('.Fullcarga').hide();
+        $('#instructions-tab2').html('');
+        var detailCashBankInt = '<div class="Interbank">\n            <p class="float-left">\n              <span class="mr-2">(*)</span>Agentes Interbank: Brinda el siguiente c\xF3digo 2735001</p>\n            <p class="float-right">\n              <span class="mr-2">(*)</span>Agencias Market de Interbank: Costo adicional S/. 2.00.</p>\n          </div>';
+        $('#instructions-tab2').append(detailCashBankInt);
         break;
       case $(this).is('#Banbif'):
-        $('.BCP').hide();
-        $('.Interbank').hide();
-        $('.Fullcarga').hide();
+        $('#instructions-tab2').html('');
         break;
       case $(this).is('#Fullcarga'):
-        $('.Fullcarga').show();
-        $('.BCP').hide();
-        $('.Interbank').hide();
+        $('#instructions-tab2').html('');
+        var detailCashBankFullC = '<div class="Fullcarga">\n            <p class="float-left">\n              <span class="mr-2">(*)</span>Encuentra a FullCarga en Bodegas, Farmacias, cabinas de Internet y Locutorios.</p>\n          </div>';
+        $('#instructions-tab2').append(detailCashBankFullC);
         break;
       case $(this).is('#Scotiabank'):
-        $('.BCP').hide();
-        $('.Interbank').hide();
-        $('.Fullcarga').hide();
+        $('#instructions-tab2').html('');
         break;
       case $(this).is('#WesternUnion'):
-        $('.BCP').hide();
-        $('.Interbank').hide();
-        $('.Fullcarga').hide();
+        $('#instructions-tab2').html('');
         break;
       case $(this).is('#Kasnet'):
-        $('.BCP').hide();
-        $('.Interbank').hide();
-        $('.Fullcarga').hide();
+        $('#instructions-tab2').html('');
         break;
     }
   });
+
   // resize code payment
-  /*let code = '9125682';
+  /* let code = '9125682';
   $('.code').text(code);
   // let code = $('.code').text();
   let width = 0;
